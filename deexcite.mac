@@ -1,0 +1,27 @@
+#/process/had/rdm/setPhotoEvaporationFile 63 152 sampleEvapData_z63.a152
+
+
+/run/numberOfThreads 20
+/run/initialize
+#/control/execute vis.mac
+
+#/gps/particle neutron
+#/gps/direction 0 0 -1
+#/gps/pos/shape Circle
+#/gps/pos/centre 0 0 100 cm
+#/gps/pos/radius 3.3 cm
+/analysis/setFileName GAINStest1.root
+
+
+
+#/gps/ene/type User
+#/gps/hist/type energy
+#/gps/hist/point	2.51e-8	1.0
+#/gps/hist/point	2.51e-7	1.0
+#/gps/hist/point	2.51e-6	1.0
+
+/gps/particle ion
+/gps/ion 63 152 0 0
+
+/run/printProgress 500
+/run/beamOn 2000001
